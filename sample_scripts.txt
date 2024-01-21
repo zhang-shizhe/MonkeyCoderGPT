@@ -1,4 +1,3 @@
-<START>
 import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -111,9 +110,6 @@ if __name__ == "__main__":
 	
 	main(args.save_every, args.total_epochs, args.batch_size)
 
-<END>
-
-<START>
 import argparse
 import os
 import sys
@@ -367,9 +363,6 @@ def main():
 if __name__ == "__main__":
 	main()
 
-<END>
-
-<START>
 import torch
 import torch.fx
 import operator
@@ -463,9 +456,6 @@ for _ in range(50):
 	torch.testing.assert_allclose(lowered(x, y), mem(x, y))
 	torch.testing.assert_allclose(scripted(x, y), mem(x, y))
 
-<END>
-
-<START>
 import argparse
 import os
 import sys
@@ -552,9 +542,6 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 	spmd_main(args.local_world_size, args.local_rank)
 
-<END>
-
-<START>
 import numpy as np
 import torch
 
@@ -569,9 +556,6 @@ x[:] = np.array(range(L)) + np.random.randint(-4 * T, 4 * T, N).reshape(N, 1)
 data = np.sin(x / 1.0 / T).astype('float64')
 torch.save(data, open('traindata.pt', 'wb'))
 
-<END>
-
-<START>
 import os
 import torch
 import torch.optim as optim
@@ -629,9 +613,6 @@ def test_epoch(model, device, data_loader):
 		test_loss, correct, len(data_loader.dataset),
 		100. * correct / len(data_loader.dataset)))
 
-<END>
-
-<START>
 import torch
 from torch.fx import Proxy, Graph, GraphModule
 
@@ -656,9 +637,6 @@ graph.output(c.node)
 
 mod = GraphModule(torch.nn.Module(), graph)
 
-<END>
-
-<START>
 import torch
 from torch.fx import symbolic_trace, replace_pattern
 
@@ -687,9 +665,6 @@ def replacement(w1, w2):
 replace_pattern(traced, pattern, replacement)
 
 
-<END>
-
-<START>
 import torch.utils.data as data
 
 from os import listdir
@@ -728,9 +703,6 @@ class DatasetFromFolder(data.Dataset):
 	def __len__(self):
 		return len(self.image_filenames)
 
-<END>
-
-<START>
 import os
 from argparse import ArgumentParser
 
@@ -799,9 +771,6 @@ def get_args():
 	args = parser.parse_args()
 	return args
 
-<END>
-
-<START>
 from collections import namedtuple
 
 import torch
@@ -841,9 +810,6 @@ class Vgg16(torch.nn.Module):
 		out = vgg_outputs(h_relu1_2, h_relu2_2, h_relu3_3, h_relu4_3)
 		return out
 
-<END>
-
-<START>
 from __future__ import division
 from __future__ import print_function
 
@@ -932,9 +898,6 @@ def main():
 if __name__ == '__main__':
 	main()
 
-<END>
-
-<START>
 import torch
 from torchvision import models
 
@@ -949,9 +912,6 @@ example_input = torch.rand(1, 3, 224, 224)
 script_module = torch.jit.trace(resnet18, example_input)
 script_module.save('resnet18_without_last_layer.pt')
 
-<END>
-
-<START>
 import torch
 from torch.fx import Proxy, symbolic_trace
 from torch.fx.node import map_arg
@@ -979,9 +939,6 @@ for node in m.graph.nodes:
 			node.replace_all_uses_with(proxy_output.node)
 			m.graph.erase_node(node)
 
-<END>
-
-<START>
 import os
 from io import open
 import torch
@@ -1028,9 +985,6 @@ class Corpus(object):
 
 		return ids
 
-<END>
-
-<START>
 import torch
 import torch.fx
 
@@ -1106,9 +1060,6 @@ print(module.code)
 
 
 
-<END>
-
-<START>
 import os
 import argparse
 import torch
@@ -1317,13 +1268,7 @@ if __name__ == '__main__':
 	
 	fsdp_main(args)
 
-<END>
 
-<START>
-
-<END>
-
-<START>
 import os
 import zipfile
 
@@ -1345,9 +1290,6 @@ if __name__ == '__main__':
 	_download_url_to_file('https://www.dropbox.com/s/lrvwfehqdcxoza8/saved_models.zip?dl=1', 'saved_models.zip', None, True)
 	unzip('saved_models.zip', '.')
 
-<END>
-
-<START>
 import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -1431,9 +1373,6 @@ if __name__ == "__main__":
 	device = 0  # shorthand for cuda:0
 	main(device, args.total_epochs, args.save_every, args.batch_size)
 
-<END>
-
-<START>
 import argparse
 import glob
 import os
@@ -1515,9 +1454,6 @@ def get_dataset(tokenizer, type_path, num_samples, args):
 	  return wikihow(tokenizer=tokenizer, type_path=type_path, num_samples=num_samples,  input_length=max_input_length, 
 						output_length=max_output_length)
 
-<END>
-
-<START>
 from pathlib import Path
 from datetime import datetime
 import torch
@@ -1800,9 +1736,6 @@ def save_distributed_model_checkpoint(model, rank, cfg, epoch=1):
 
 		return
 
-<END>
-
-<START>
 import torch
 import torch.nn as nn
 import torch.distributed.rpc as rpc
@@ -1877,9 +1810,6 @@ class RNNModel(nn.Module):
 		remote_params.extend(_remote_method(_parameter_rrefs, self.decoder_rref))
 		return remote_params
 
-<END>
-
-<START>
 import argparse
 import gym
 import numpy as np
@@ -1989,9 +1919,6 @@ def main():
 if __name__ == '__main__':
 	main()
 
-<END>
-
-<START>
 
 from dataclasses import dataclass, asdict
 from collections import OrderedDict
@@ -2130,9 +2057,6 @@ class Trainer:
 			if self.test_loader:
 				self._run_epoch(epoch, self.test_loader, train=False)
 
-<END>
-
-<START>
 import torch
 from PIL import Image
 
@@ -2167,9 +2091,6 @@ def normalize_batch(batch):
 	batch = batch.div_(255.0)
 	return (batch - mean) / std
 
-<END>
-
-<START>
 import torch
 
 
@@ -2257,9 +2178,6 @@ class UpsampleConvLayer(torch.nn.Module):
 		out = self.conv2d(out)
 		return out
 
-<END>
-
-<START>
 import torch
 import os
 import torch.distributed as dist
@@ -2289,9 +2207,6 @@ def apply_fsdp_checkpointing(model):
 		model, checkpoint_wrapper_fn=non_reentrant_wrapper, check_fn=check_fn
 	)
 
-<END>
-
-<START>
 import torch
 import torch.fx as fx
 
@@ -2336,9 +2251,6 @@ res = invert(f)
 print(res.code)
 print(f(res((torch.arange(5) + 1))))  # [1., 2., 3., 4, 5.]
 
-<END>
-
-<START>
 import torch
 from torch.utils.data import Dataset
 
@@ -2352,9 +2264,6 @@ class MyTrainDataset(Dataset):
 	
 	def __getitem__(self, index):
 		return self.data[index]
-<END>
-
-<START>
 from __future__ import print_function
 import argparse
 import torch
@@ -2396,9 +2305,6 @@ out_img = Image.merge('YCbCr', [out_img_y, out_img_cb, out_img_cr]).convert('RGB
 out_img.save(opt.output_filename)
 print('output image saved to ', opt.output_filename)
 
-<END>
-
-<START>
 import os
 import threading
 from datetime import datetime
@@ -2542,9 +2448,6 @@ if __name__=="__main__":
 	world_size = batch_update_size + 1
 	mp.spawn(run, args=(world_size, ), nprocs=world_size, join=True)
 
-<END>
-
-<START>
 import logging
 import torch
 
@@ -2566,9 +2469,6 @@ def verify_min_gpu_count(min_gpus: int = 2) -> bool:
 	gpu_count = torch.cuda.device_count()
 	return has_cuda and gpu_count >= min_gpus
 
-<END>
-
-<START>
 import os
 import sys
 import torch
@@ -2647,9 +2547,6 @@ for i in range(num_iters):
 
 rank_log(_rank, logger, "Tensor Parallel training completed!")
 
-<END>
-
-<START>
 
 
 
@@ -2694,9 +2591,6 @@ html_theme_options = {
 	'analytics_id': 'UA-117752657-2',
 }
 
-<END>
-
-<START>
 import torch
 from torch.fx import symbolic_trace, Tracer, Graph, GraphModule, Node
 from typing import Any, Callable, Dict, Optional, Tuple, Union
@@ -2754,9 +2648,6 @@ def assert_all_nodes_have_tags(g: Graph) -> bool:
 print(assert_all_nodes_have_tags(custom_traced_graph))
 
 
-<END>
-
-<START>
 from __future__ import print_function
 import argparse
 import torch
@@ -2860,9 +2751,6 @@ if __name__ == '__main__':
 
 	test(args, model, device, dataset2, kwargs)
 
-<END>
-
-<START>
 import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -2976,9 +2864,6 @@ if __name__ == "__main__":
 	
 	main(args.save_every, args.total_epochs, args.batch_size)
 
-<END>
-
-<START>
 import os
 import torch
 import torch.distributed as dist
@@ -3077,9 +2962,6 @@ def setup_model(model_name):
 		tokenizer =  T5Tokenizer.from_pretrained(model_name)
 		return model, tokenizer
 
-<END>
-
-<START>
 from dataclasses import dataclass
 from typing import ClassVar
 
@@ -3099,9 +2981,6 @@ class train_config:
 	
 	
 	
-<END>
-
-<START>
 import argparse
 import torch
 
@@ -3181,9 +3060,6 @@ with open(args.outf, 'w') as outf:
 			if i % args.log_interval == 0:
 				print('| Generated {}/{} words'.format(i, args.words))
 
-<END>
-
-<START>
 import os
 import sys
 import torch
@@ -3265,9 +3141,6 @@ for i in range(num_iters):
 
 rank_log(_rank, logger, "Sequence Parallel training completed!")
 
-<END>
-
-<START>
 import sys
 import torch
 import torch.distributed as dist
@@ -3380,9 +3253,6 @@ for i in range(num_iterations):
 
 rank_log(_rank, logger, "2D training successfully completed!")
 
-<END>
-
-<START>
 from dataclasses import dataclass, field
 from typing import ClassVar
 from torch.distributed.fsdp import ShardingStrategy
@@ -3402,9 +3272,6 @@ class fsdp_config:
 	
 	
 	
-<END>
-
-<START>
 import argparse
 import gym
 import numpy as np
@@ -3549,9 +3416,6 @@ def main():
 if __name__ == '__main__':
 	main()
 
-<END>
-
-<START>
 import torch
 from torch.utils.data import Dataset
 import fsspec
@@ -3591,9 +3455,6 @@ class CharDataset(Dataset):
 		y = torch.tensor(dix[1:], dtype=torch.long)
 		return x, y
 
-<END>
-
-<START>
 import torch
 
 from torch.distributed.fsdp import (
@@ -3624,9 +3485,6 @@ fp32_policy = MixedPrecision(
 	buffer_dtype=torch.float32,
 )
 
-<END>
-
-<START>
 import argparse
 import os
 from threading import Lock
@@ -3879,9 +3737,6 @@ if __name__ == '__main__':
 	for p in processes:
 		p.join()
 
-<END>
-
-<START>
 import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
@@ -3982,9 +3837,6 @@ if __name__ == "__main__":
 	world_size = torch.cuda.device_count()
 	mp.spawn(main, args=(world_size, args.save_every, args.total_epochs, args.batch_size), nprocs=world_size)
 
-<END>
-
-<START>
 import torch
 import torch.fx
 
@@ -4050,9 +3902,6 @@ with torch.autograd.profiler.profile() as prof:
 
 print(prof)
 
-<END>
-
-<START>
 
 from enum import Enum, auto
 
@@ -4114,9 +3963,6 @@ new_output = traced(x, y)
 
 torch.testing.assert_close(new_output, torch.nn.LeakyReLU()(orig_output))
 
-<END>
-
-<START>
 import torch
 import torch.nn as nn
 
@@ -4194,9 +4040,6 @@ class SNLIClassifier(nn.Module):
 		scores = self.out(torch.cat([premise, hypothesis], 1))
 		return scores
 
-<END>
-
-<START>
 import torch
 from torch.fx import symbolic_trace
 import operator
@@ -4220,9 +4063,6 @@ for n in traced.graph.nodes:
 
 traced.recompile()
 
-<END>
-
-<START>
 
 
 import torch.distributed as dist
@@ -4266,9 +4106,6 @@ def get_t5_wrapper():
 
 	return t5_auto_wrap_policy
 
-<END>
-
-<START>
 
 
 
@@ -4287,9 +4124,6 @@ def bfloat_support():
 		and nccl.version() >= (2, 10)
 	)
 
-<END>
-
-<START>
 import torch
 import torch.fx
 from typing import Any, Callable, Dict, Optional, Tuple
@@ -4326,9 +4160,6 @@ for node in traced_rn18.nodes:
 	module_qualname = tracer.node_to_originating_module.get(node)
 	print('Node', node, 'is from module', module_qualname)
 
-<END>
-
-<START>
 from __future__ import print_function
 from __future__ import unicode_literals
 
@@ -4357,6 +4188,4 @@ for index in range(options.dimension * options.dimension):
 
 plt.savefig(options.out_file)
 print("Saved ", options.out_file)
-
-<END>
 
