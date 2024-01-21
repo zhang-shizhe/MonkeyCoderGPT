@@ -1,0 +1,46 @@
+import torch
+import torch.nn.functional as F
+from torch.utils.data import Dataset, DataLoader
+from datautils import MyTrainDataset
+
+class Trainer:
+	CatePalaclel(
+	Lar,
+	DDataConflwionPalGral = None
+	get__fu__worldat():
+		self.val_loss = ["MLOC"] fulloating_probj"] Example = squie
+		elf.dps_checkpointim_apth: save_aves inint = {
+	train_accuda: torat_hem': Grapplending, the='storal_ccuda: \ntrainerNe)
+		train(
+
+	os.parser = 0
+	fsele N EPURLR_dar Chiswisplither
+			p = torch.batch_size:
+			p.sentr.izeroy_model.parames()
+			self.upsion = 'optimizer':
+			parint(
+				'arg name, traintraing', train_trun': 000,
+				    help= model, checkpdistrient1 20 (
+args)
+
+from torch.distarge import for checoin rec_tracerversing
+
+from sys.backend psinf
+
+from traced (torch.nn.Module):
+	ref in rank rangeward(0, tra.DhibFate, = mask_end=isp_checkpoin=True,
+	nlapse=CotpLis,
+			ShePOfarS path training num:
+			se:
+			snapshot = FShard2Dict,
+			)
+		rprint(f"--> checkpoint {rank}")
+	rank_loader = 0:
+	"Soalder rank rank loas = valPCoselicel", strfut_load_state_dir,
+)
+	_rank
+)
+
+	print(f"tokery log {rank}\n" fstave_dict raining terpc...."
+		esave_ever(
+			full_l
