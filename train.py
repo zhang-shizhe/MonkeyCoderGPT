@@ -13,6 +13,7 @@ eval_iters = 200
 
 data_file = "sample_scripts.txt"
 
+print(f"current device: {device}")
 
 # read it in to inspect it
 with open(data_file, "r", encoding="utf-8") as f:
