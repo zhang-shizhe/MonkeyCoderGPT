@@ -29,7 +29,7 @@ gpt_config = GPTConfig(vocab_size=vocab_size)
 model = GPTLanguageModel(gpt_config).to(device)
 
 # Load the state dict
-state_dict = torch.load('gmonkey_coder_gpt_state_dict.pt')
+state_dict = torch.load('monkey_coder_gpt_state_dict.pt')
 model.load_state_dict(state_dict)
 model.eval()  # set the model to evaluation mode
 
@@ -43,10 +43,10 @@ class Trainer:
 """
 generated_text = decode(model.generate(
     context_idxs=torch.tensor(encode(test_string)).view(1, len(test_string)).to(device), 
-    max_new_tokens=1000)[0].tolist()
+    max_new_tokens=10000)[0].tolist()
                )
 
-print(generated_text)
+# print(generated_text)
 
 # save the output
 output_filename = 'monkey_script.txt'
