@@ -107,24 +107,7 @@ for iter in tqdm(range(max_iters)):  # increase number of steps for good results
     loss.backward()
     optimizer.step()
 
+# save model
+torch.save(model.state_dict(), 'monkey_coder_gpt_state_dict.pt')
 
-# generate texts
-test_string = """import torch
-import torch.nn.functional as F
-from torch.utils.data import Dataset, DataLoader
-from datautils import MyTrainDataset
 
-class Trainer:
-"""
-generated_text = decode(model.generate(
-    context_idxs = torch.tensor(encode(test_string)).view(1, len(test_string)).to(device), 
-    max_new_tokens=1000)[0].tolist()
-               )
-
-print(generated_text)
-
-# save the output
-output_filename = 'monkey_script.txt'
-with open(output_filename, 'w', encoding='utf-8') as file:
-    file.write(generated_text)
-print(f"Generated text has been saved to {output_filename}")
