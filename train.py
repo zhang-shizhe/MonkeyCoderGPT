@@ -5,7 +5,7 @@ from tqdm.auto import tqdm
 
 batch_size = 64
 context_length = 256
-max_iters = 1000
+max_iters = 5000
 learning_rate = 3e-4
 device = "cuda" if torch.cuda.is_available() else "cpu"
 eval_interval = 100
@@ -66,7 +66,7 @@ def get_batch(split):
 
 # init model and config
 
-gpt_config = GPTConfig()
+gpt_config = GPTConfig(vocab_size=vocab_size)
 model = GPTLanguageModel(gpt_config).to(device)
 
 # optimizer
