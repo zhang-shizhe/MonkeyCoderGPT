@@ -1,5 +1,5 @@
 import torch
-from src.monkeycodergpt.model import GPTLanguageModel, GPTConfig
+from model import GPTLanguageModel, GPTConfig
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 data_file = "../../data/sample_scripts.txt"

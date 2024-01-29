@@ -1,5 +1,5 @@
 import torch
-from src.monkeycodergpt.model import GPTLanguageModel, GPTConfig
+from model import GPTLanguageModel, GPTConfig
 
 from tqdm.auto import tqdm
 
