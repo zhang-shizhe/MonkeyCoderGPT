@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center; /* keeps the rest of the content centered */
+    padding: 20px;
+}
+
+#code {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: left; /* aligns the text inside the #code element to the left */
+}

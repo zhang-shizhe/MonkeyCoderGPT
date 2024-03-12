@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/themes/prism.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.26.0/prism.js"></script>
+</head>
+<body>
+    <h1>Python Code Monkey Generator</h1>
+    <button id="generate">Generate</button>
+    <pre id="code" class="language-python"></pre>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function displayCodeCharacterByCharacter(text, index) {
+            if (index < text.length) {
+                $('#code').append(text[index]);
+                setTimeout(function() {
+                    displayCodeCharacterByCharacter(text, index + 1);
+                }, 50); // Adjust time as needed
+            } else {
+                // Once the text is completely added, call Prism to highlight all syntax
+                Prism.highlightAll();
+            }
+        }
+
+        $(document).ready(function() {
+            $('#generate').click(function() {
+                $.ajax({
+                    url: '/generate',
+                    type: 'POST',
+                    beforeSend: function() {
+                        $('#code').text(''); // Clear the code area
+                    },
+                    success: function(response) {
+                        displayCodeCharacterByCharacter(response, 0); // Start the display function
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
