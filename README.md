@@ -16,7 +16,7 @@ The model is designed to understand and generate pythonic text one character at 
 - **Customizable Model Configuration**: Allows easy adjustments of model parameters like the number of heads, head size, number of layers, and dropout rate.
 
 ## Corpus
-I inclued and preprocessed python scripts from the following open-source repositories to form my training and val data:
+I inclued and preprocessed some python scripts from the following open-source repositories to form my training and val data:
 1. https://github.com/huggingface/transformers/tree/main
 2. https://github.com/IBM/pytorch-seq2seq
 3. https://github.com/allenai/allennlp
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ### Generate Scripts without Training
 To generate scripts with a pretained model, from root run:
 ```bash
-cd scr/monkeycodergpt/
+cd src/monkeycodergpt/
 python generate.py
 ```
 This will load the state_dict uder models/.
@@ -54,14 +54,14 @@ Performance of the pretrained model: loss 0.68 on the val set after 5000 iterati
 Change `source_directories` inside build_corpus.py to include your own corpus or scripts.
 Then from the root run:
 ```bash
-cd scr/monkeycodergpt/
+cd src/monkeycodergpt/
 python build_corpus.py
 ```
 
 Modify the GPTConfig class in model.py to change the model configuration. Available parameters include:
 
 - `vocab_size`: The number of unique characters in the dataset.
-- `context_length`: The maximum length of the sequences the model can handle.
+- `context_length`: The maximum length of the sequences the model during training can handle.
 - `num_heads`: The number of attention heads in each multi-head attention layer.
 - `head_size`: The dimensionality of each attention head.
 - `emb_dim`: The dimensionality of the token embeddings.
