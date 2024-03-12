@@ -46,7 +46,7 @@ from datautils import MyTrainDataset
 class Trainer:
     """
     context_idxs = torch.tensor(encode(test_string)).view(1, len(test_string)).to(device)
-    generated_idxs = model.generate(context_idxs, max_new_tokens=300).tolist()[0]
+    generated_idxs = model.generate(context_idxs, max_new_tokens=500).tolist()[0]
     generated_text = decode(generated_idxs)
 
     return generated_text
