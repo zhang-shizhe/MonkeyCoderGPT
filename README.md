@@ -3,7 +3,7 @@
 # Overview
 This project crafts **a character-level language model using a GPT-like architecture from scratch**. To showcase the model, a Flask-based deployment has been integrated, allowing for interactive demonstration.
 
-![](image/web_page.gif)
+![](https://github.com/zhang-shizhe/MonkeyCoderGPT/blob/main/img/web_page.gif)
 
 The model is designed to understand and generate pythonic text one character at a time, allowing for a nuanced understanding of language syntax and structure. While the Python scripts produced by the model are syntactically accurate and contextually pertinent, they may not necessarily constitute functional or logically consistent programs. Thus, I decided to call it `MonkeyCoderGPT`.
 
