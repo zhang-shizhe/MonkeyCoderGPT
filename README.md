@@ -5,7 +5,7 @@ This project crafts **a character-level language model using a GPT-like architec
 
 ![](https://github.com/zhang-shizhe/MonkeyCoderGPT/blob/main/img/web_page.gif)
 
-The model is designed to understand and generate pythonic text one character at a time, allowing for a nuanced understanding of language syntax and structure. While the Python scripts produced by the model are syntactically accurate and contextually pertinent, they may not necessarily constitute functional or logically consistent programs. Thus, I decided to call it `MonkeyCoderGPT`.
+The model is designed to understand and generate pythonic text one character at a time, allowing for a nuanced understanding of language syntax and structure. Given a brief starting prompt such as `import torch`, the model is capable of autonomously continuing to generate *pythonic* code. While the Python scripts produced by the model are syntactically accurate and contextually pertinent, they may not necessarily constitute functional or logically consistent programs. Thus, I decided to call it `MonkeyCoderGPT`.
 
 ## Features
 - **Training on your own gaming laptop**: Total 10 Million of parameters, capable of training on consumer-level GPUs
